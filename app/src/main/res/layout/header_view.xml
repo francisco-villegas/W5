@@ -9,21 +9,19 @@
     >
 
     <TextView
-        android:textColor="@color/white"
         android:id="@+id/tvTemperatureTop"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="100\u00B0"
-        android:textSize="60sp"/>
+        android:textColor="@color/white"
+        android:textSize="60sp" />
 
     <TextView
-        android:textColor="@color/white"
         android:id="@+id/tvConditionTop"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Clear"
-        android:textSize="20sp"/>
+        android:textColor="@color/white"
+        android:textSize="20sp" />
 
 </LinearLayout>

@@ -87,4 +87,7 @@ dependencies {
     compile('com.crashlytics.sdk.android:crashlytics:2.6.8@aar') {
         transitive = true;
     }
+
+    //IconView Weather
+    compile 'com.github.pwittchen:weathericonview:1.1.0'
 }

@@ -2,6 +2,7 @@ package com.example.pancho.w5.view.mainactivity;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -14,7 +15,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.pancho.w5.R;
-import com.example.pancho.w5.model.HourlyForecast;
+import com.example.pancho.w5.model.HourlyNeeded;
+import com.example.pancho.w5.util.CONSTANTS;
+import com.github.pwittchen.weathericonview.WeatherIconView;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -29,15 +32,24 @@ import butterknife.ButterKnife;
 
 public class SecondAdapter extends RecyclerView.Adapter<SecondAdapter.ViewHolder>{
     private static final String TAG = "Adapter";
-    List<HourlyForecast> hourlyForecast;
+    private final int minp;
+    private final int maxp;
+    List<HourlyNeeded> hourlyNeeded;
     Context context;
     private int lastPosition = -1;
 
     RecyclerView.LayoutManager layoutManager;
     RecyclerView.ItemAnimator itemAnimator;
+    private String unit;
 
-    public SecondAdapter(List<HourlyForecast> hourlyForecast) {
-        this.hourlyForecast = hourlyForecast;
+    public SecondAdapter(List<HourlyNeeded> hourlyNeeded, int minp, int maxp) {
+        this.hourlyNeeded = hourlyNeeded;
+        this.minp = minp;
+        this.maxp = maxp;
+    }
+
+    public void setUnits(String unit){
+        this.unit = unit;
     }
 
     @Override
@@ -49,11 +61,20 @@ public class SecondAdapter extends RecyclerView.Adapter<SecondAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        final HourlyForecast item = hourlyForecast.get(position);
+        final HourlyNeeded item = hourlyNeeded.get(position);
 
-        holder.tvhour.setText(item.getFCTTIME().getCivil());
-        holder.tvdegree_sub.setText(item.getTemp().getEnglish() + "°F");
-        Picasso.with(holder.itemView.getContext()).load(item.getIconUrl()).into(holder.imageView);
+        holder.tvhour.setText(item.getHour());
+        if (unit.equals("Celsius")){
+            holder.tvdegree_sub.setText(item.getCelsius() + "°C");
+        } else{
+            holder.tvdegree_sub.setText(item.getFahrenheit() + "°F");
+        }
+        holder.imageView.setIconResource(context.getResources().getString(Integer.parseInt(item.getUrl())));
+        if(position == minp){
+            holder.imageView.setIconColor(ContextCompat.getColor(context, CONSTANTS.min_color));
+        } else if(position == maxp){
+            holder.imageView.setIconColor(ContextCompat.getColor(context, CONSTANTS.max_color));
+        }
     }
 
     private void setAnimation(View viewToAnimate, int position)
@@ -68,7 +89,7 @@ public class SecondAdapter extends RecyclerView.Adapter<SecondAdapter.ViewHolder
     }
     @Override
     public int getItemCount() {
-        return hourlyForecast.size();
+        return hourlyNeeded.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -83,7 +104,7 @@ public class SecondAdapter extends RecyclerView.Adapter<SecondAdapter.ViewHolder
 
         @Nullable
         @BindView(R.id.imageView)
-        ImageView imageView;
+        WeatherIconView imageView;
 
         public ViewHolder(View itemView) {
             super(itemView);

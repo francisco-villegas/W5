@@ -3,6 +3,7 @@ package com.example.pancho.w5;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.crashlytics.android.Crashlytics;
@@ -11,6 +12,10 @@ import com.crashlytics.android.answers.CustomEvent;
 import com.example.pancho.w5.view.mainactivity.MainActivity;
 import com.flurry.android.FlurryAgent;
 import com.crashlytics.android.answers.Answers;
+
+import java.util.Calendar;
+import java.util.Date;
+
 import io.fabric.sdk.android.Fabric;
 
 
@@ -37,7 +42,6 @@ public class HomeActivity extends AppCompatActivity {
                 .putContentId("1234")
                 .putCustomAttribute("Favorites Count", 20)
                 .putCustomAttribute("Screen Orientation", "Landscape"));
-
     }
 
     public void onKeyMetric(View view) {

@@ -68,19 +68,19 @@ public class CurrentObservation {
     private String windDir;
     @SerializedName("wind_degrees")
     @Expose
-    private Integer windDegrees;
+    private Double windDegrees;
     @SerializedName("wind_mph")
     @Expose
     private Double windMph;
     @SerializedName("wind_gust_mph")
     @Expose
-    private Integer windGustMph;
+    private Double windGustMph;
     @SerializedName("wind_kph")
     @Expose
-    private Integer windKph;
+    private Double windKph;
     @SerializedName("wind_gust_kph")
     @Expose
-    private Integer windGustKph;
+    private Double windGustKph;
     @SerializedName("pressure_mb")
     @Expose
     private String pressureMb;
@@ -95,10 +95,10 @@ public class CurrentObservation {
     private String dewpointString;
     @SerializedName("dewpoint_f")
     @Expose
-    private Integer dewpointF;
+    private Double dewpointF;
     @SerializedName("dewpoint_c")
     @Expose
-    private Integer dewpointC;
+    private Double dewpointC;
     @SerializedName("heat_index_string")
     @Expose
     private String heatIndexString;
@@ -335,11 +335,11 @@ public class CurrentObservation {
         this.windDir = windDir;
     }
 
-    public Integer getWindDegrees() {
+    public Double getWindDegrees() {
         return windDegrees;
     }
 
-    public void setWindDegrees(Integer windDegrees) {
+    public void setWindDegrees(Double windDegrees) {
         this.windDegrees = windDegrees;
     }
 
@@ -351,27 +351,27 @@ public class CurrentObservation {
         this.windMph = windMph;
     }
 
-    public Integer getWindGustMph() {
+    public Double getWindGustMph() {
         return windGustMph;
     }
 
-    public void setWindGustMph(Integer windGustMph) {
+    public void setWindGustMph(Double windGustMph) {
         this.windGustMph = windGustMph;
     }
 
-    public Integer getWindKph() {
+    public Double getWindKph() {
         return windKph;
     }
 
-    public void setWindKph(Integer windKph) {
+    public void setWindKph(Double windKph) {
         this.windKph = windKph;
     }
 
-    public Integer getWindGustKph() {
+    public Double getWindGustKph() {
         return windGustKph;
     }
 
-    public void setWindGustKph(Integer windGustKph) {
+    public void setWindGustKph(Double windGustKph) {
         this.windGustKph = windGustKph;
     }
 
@@ -407,19 +407,19 @@ public class CurrentObservation {
         this.dewpointString = dewpointString;
     }
 
-    public Integer getDewpointF() {
+    public Double getDewpointF() {
         return dewpointF;
     }
 
-    public void setDewpointF(Integer dewpointF) {
+    public void setDewpointF(Double dewpointF) {
         this.dewpointF = dewpointF;
     }
 
-    public Integer getDewpointC() {
+    public Double getDewpointC() {
         return dewpointC;
     }
 
-    public void setDewpointC(Integer dewpointC) {
+    public void setDewpointC(Double dewpointC) {
         this.dewpointC = dewpointC;
     }
 

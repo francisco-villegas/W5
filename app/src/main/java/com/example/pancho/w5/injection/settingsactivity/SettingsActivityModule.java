@@ -1,6 +1,7 @@
 package com.example.pancho.w5.injection.settingsactivity;
 
 import com.example.pancho.w5.view.settingsactivity.SettingsActivityPresenter;
+import com.example.pancho.w5.view.settingsactivity.UnitDialogClass;
 
 import dagger.Module;
 import dagger.Provides;

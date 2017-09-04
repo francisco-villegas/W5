@@ -20,11 +20,13 @@ public interface MainActivityContract {
         void sendCurrentWeather(CurrentObservation weather);
 
         void sendNextWeather(List<HourlyForecastOrdered> hourlyForecastOrdered);
+
+        void InvalidOrNullZip();
     }
 
     interface Presenter extends BasePresenter<View>{
         void setContext(Context context);
 
-        void makeRestCall();
+        void makeRestCall(boolean force);
     }
 }

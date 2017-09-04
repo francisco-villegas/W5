@@ -45,10 +45,11 @@
         app:bootstrapBrand="info"
         app:bootstrapSize="lg"
         app:buttonMode="regular"
+        app:roundedCorners="true"
+        app:showOutline="false"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bootstrapButton2"
-        app:roundedCorners="true"
-        app:showOutline="false" />
+        />
 
 </android.support.constraint.ConstraintLayout>

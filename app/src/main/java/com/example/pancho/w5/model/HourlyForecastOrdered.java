@@ -8,11 +8,14 @@ import java.util.List;
 
 public class HourlyForecastOrdered {
     String label = "";
-    List<HourlyForecast> hourlyForecastOrdered;
+    int minp, maxp;
+    List<HourlyNeeded> hourlyForecastOrdered;
 
 
-    public HourlyForecastOrdered(String label, List<HourlyForecast> hourlyForecastOrdered) {
+    public HourlyForecastOrdered(String label, int minp, int maxp, List<HourlyNeeded> hourlyForecastOrdered) {
         this.label = label;
+        this.minp = minp;
+        this.maxp = maxp;
         this.hourlyForecastOrdered = hourlyForecastOrdered;
     }
 
@@ -24,11 +27,27 @@ public class HourlyForecastOrdered {
         this.label = label;
     }
 
-    public List<HourlyForecast> getHourlyForecastOrdered() {
+    public int getMinp() {
+        return minp;
+    }
+
+    public void setMinp(int minp) {
+        this.minp = minp;
+    }
+
+    public int getMaxp() {
+        return maxp;
+    }
+
+    public void setMaxp(int maxp) {
+        this.maxp = maxp;
+    }
+
+    public List<HourlyNeeded> getHourlyForecastOrdered() {
         return hourlyForecastOrdered;
     }
 
-    public void setHourlyForecastOrdered(List<HourlyForecast> hourlyForecastOrdered) {
+    public void setHourlyForecastOrdered(List<HourlyNeeded> hourlyForecastOrdered) {
         this.hourlyForecastOrdered = hourlyForecastOrdered;
     }
 }

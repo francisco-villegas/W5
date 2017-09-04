@@ -32,7 +32,7 @@
 
     <android.support.v7.widget.RecyclerView
         android:background="@color/white"
-        android:id="@+id/recycler"
+        android:id="@+id/recycler_settings"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_gravity="center_horizontal"
