@@ -18,12 +18,12 @@ import java.util.Date;
 
 import io.fabric.sdk.android.Fabric;
 
+import static com.example.pancho.w5.util.CONSTANTS.*;
+
 
 public class HomeActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
-
-    private static final String FLURRY_API_KEY = "67DXWDX6YXNZDMW6HXMY";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

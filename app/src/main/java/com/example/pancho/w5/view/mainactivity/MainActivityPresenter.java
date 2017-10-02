@@ -73,6 +73,7 @@ public class MainActivityPresenter implements com.example.pancho.w5.view.mainact
 
         if(force || (currentTime.compareTo(old_time)>=0)) {
             String zip = prefs.getString(CONSTANTS.MY_PREFS_ZIP, "");
+            Log.i(TAG, "ZIPCode: " + zip);
             if(zip.equals("")) {
                 Toast.makeText(context, "Empty zip code", Toast.LENGTH_SHORT).show();
                 view.InvalidOrNullZip();
@@ -87,6 +88,7 @@ public class MainActivityPresenter implements com.example.pancho.w5.view.mainact
                 Request request = new Request.Builder()
                         .url(url)
                         .build();
+                Log.i(TAG, "URL: " + url.toString());
                 client.newCall(request).enqueue(new Callback() {
                     @Override
                     public void onFailure(Call call, IOException e) {

@@ -22,7 +22,7 @@
         android:padding="10dp"
         android:text="Text"
         android:textColor="@android:color/black"
-        android:textSize="20sp"
+        android:textSize="13sp"
         card_view:layout_constraintBottom_toTopOf="@+id/imageView"
         card_view:layout_constraintLeft_toLeftOf="parent"
         card_view:layout_constraintRight_toRightOf="parent"
@@ -40,7 +40,7 @@
         android:padding="10dp"
         android:text="Text"
         android:textColor="@android:color/black"
-        android:textSize="25sp"
+        android:textSize="20sp"
         card_view:layout_constraintBottom_toBottomOf="parent"
         card_view:layout_constraintLeft_toLeftOf="parent"
         card_view:layout_constraintRight_toRightOf="parent"
@@ -48,7 +48,7 @@
         card_view:layout_constraintVertical_bias="0.0" />
 
     <com.github.pwittchen.weathericonview.WeatherIconView
-        custom:weatherIconSize="60"
+        custom:weatherIconSize="40"
         custom:weatherIconColor="@color/gray"
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
