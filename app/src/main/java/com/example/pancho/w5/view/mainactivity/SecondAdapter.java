@@ -73,7 +73,7 @@ public class SecondAdapter extends RecyclerView.Adapter<SecondAdapter.ViewHolder
         if (minp != maxp){
             if (position == minp) {
                 holder.imageView.setIconColor(ContextCompat.getColor(context, CONSTANTS.min_color));
-            } else if (position == maxp) {
+            } else if (position == maxp) { 
                 holder.imageView.setIconColor(ContextCompat.getColor(context, CONSTANTS.max_color));
             }
         }
