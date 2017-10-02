@@ -167,8 +167,6 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
                 SharedPreferences prefs = getSharedPreferences(CONSTANTS.MY_PREFS, MODE_PRIVATE);
                 String zip = prefs.getString(CONSTANTS.MY_PREFS_ZIP, "");
                 if (zip.equals("")) {
-//                    Toast.makeText(this, "Empty zip code", Toast.LENGTH_SHORT).show();
-//                    InvalidOrNullZip();
                     finish();
                 } else {
                     HashMap<String, String> changes = (HashMap<String, String>) data.getSerializableExtra(CONSTANTS.RESULT_BACK_VALUE);

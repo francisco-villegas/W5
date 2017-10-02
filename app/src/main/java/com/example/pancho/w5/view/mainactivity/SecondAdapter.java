@@ -64,16 +64,18 @@ public class SecondAdapter extends RecyclerView.Adapter<SecondAdapter.ViewHolder
         final HourlyNeeded item = hourlyNeeded.get(position);
 
         holder.tvhour.setText(item.getHour());
-        if (unit.equals("Celsius")){
-            holder.tvdegree_sub.setText(item.getCelsius() + "°C");
-        } else{
-            holder.tvdegree_sub.setText(item.getFahrenheit() + "°F");
+        if (unit.equals("Celsius")) {
+            holder.tvdegree_sub.setText(item.getCelsius());
+        } else {
+            holder.tvdegree_sub.setText(item.getFahrenheit());
         }
         holder.imageView.setIconResource(context.getResources().getString(Integer.parseInt(item.getUrl())));
-        if(position == minp){
-            holder.imageView.setIconColor(ContextCompat.getColor(context, CONSTANTS.min_color));
-        } else if(position == maxp){
-            holder.imageView.setIconColor(ContextCompat.getColor(context, CONSTANTS.max_color));
+        if (position == minp && position == maxp){
+            if (position == minp) {
+                holder.imageView.setIconColor(ContextCompat.getColor(context, CONSTANTS.min_color));
+            } else if (position == maxp) {
+                holder.imageView.setIconColor(ContextCompat.getColor(context, CONSTANTS.max_color));
+            }
         }
     }
 
