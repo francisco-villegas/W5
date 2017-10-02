@@ -71,7 +71,7 @@ public class MainActivityPresenter implements com.example.pancho.w5.view.mainact
 
         Log.d(TAG, "onResponse: " + currentTime + " " + old_time);
 
-        if(force || (currentTime.compareTo(old_time)>=0)) {
+        if(true || (currentTime.compareTo(old_time)>=0)) {
             String zip = prefs.getString(CONSTANTS.MY_PREFS_ZIP, "");
             Log.i(TAG, "ZIPCode: " + zip);
             if(zip.equals("")) {
